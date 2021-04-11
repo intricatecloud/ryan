@@ -1,0 +1,39 @@
+{
+  plugins: [new ExtractTextPlugin('./bundle.css')],
+  module: {
+    rules: [
+      // CSS loaders for CSS modules in your project. We exclude CSS files in ./node_modules
+      {
+        test: /\.css$/,
+        exclude: [/\.global\./, /node_modules/],
+        loader: ExtractTextPlugin.extract(
+          {
+            fallback: 'style-loader',
+            use:[
+              {
+                loader: 'css-loader',
+                options: {
+                  importLoaders: 1,
+                  modules: true,
+                  autoprefixer: true,
+                  minimize: true,
+                  localIdentName: '[name]__[local]___[hash:base64:5]'
+                }
+              }
+            ]
+          })
+      },
+ 
+      // CSS loaders for global CSS files which includes files in ./node_modules
+      {
+        test: /\.css/,
+        include: [/\.global\./, /node_modules/],
+        loader: ExtractTextPlugin.extract(
+          {
+            fallback: 'style-loader',
+            use: ['css-loader']
+          })
+      }
+    ]
+  }
+}
