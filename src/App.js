@@ -21,7 +21,7 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-class App extends React.Component {
+class SignInScreen extends React.Component {
 
   // The component's Local state.
   state = {
@@ -75,4 +75,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default SignInScreen;
