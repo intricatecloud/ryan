@@ -1,37 +1,10 @@
 import React from 'react';
 import './App.css';
-// import './firebaseui-styling.global.css';
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
 // import firebase from 'firebase';
 
-// var firebase = require("firebase/app");
-
-// require("firebase/auth");
-// require("firebase/firestore");
-
-
-
-
 import firebase from "firebase/app"
-
 import "firebase/auth";
-import "firebase/firestore";
-
-// function App() {
-//   return (
-//     <section className="section">
-//       <div className="container has-text-centered">
-//         <h1 className="title"> Twitter for wentaoxu</h1>
-//         <div className="subtitle"> A place for wentaoxu to login </div>
-//         <button> sign in </button>
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default App;
-
-
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -44,19 +17,11 @@ const firebaseConfig = {
   appId: "1:561334277695:web:af0f15bad34ae7d20e8a8a",
   measurementId: "G-PN6HCNTX7N"
 };
-// const firebaseApp = firebase.initializeApp(firebaseConfig);
-// Initialize Firebase
-// firebase.initializeApp(firebaseConfig);
-// firebase.analytics();
 
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
-
-
-class SignInScreen extends React.Component {
+class App extends React.Component {
 
   // The component's Local state.
   state = {
@@ -110,4 +75,4 @@ class SignInScreen extends React.Component {
   }
 }
 
-export default SignInScreen.render();
+export default App;
